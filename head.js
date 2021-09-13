@@ -9,8 +9,11 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+//to find head of array
 const head = function(array) {
-  const firstElement = array.shift();
+  //for preventing changes in original array
+  var newArray = array.slice(0, 1); 
+  const firstElement = newArray.shift();
   return firstElement;
 };
 
