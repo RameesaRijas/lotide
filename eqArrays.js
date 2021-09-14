@@ -11,23 +11,16 @@ const assertEqual = function(actual, expected) {
 
 //out put return
 const eqArrays = (arrayOne , arrayTwo) => {
-  let result = "";
   if(arrayOne.length !== arrayTwo.length) {
     return false;
   } 
-  result = arrayMatch(arrayOne, arrayTwo);
-  return result;
-}
-
-//checking if array is matched or else return false
-const arrayMatch = (arr1, arr2) => {
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr1[i] !== arr2[i]) {
+  //checking if array is matched or else return false
+  for(let i = 0; i < arrayOne.length; i++) {
+    if(arrayOne[i] !== arrayTwo[i]) {
       return false ;
     } 
   }
   return true;
 }
 
-
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); 
+assertEqual(eqArrays([1, 2, 8], [1, 2, 3]), true); 
