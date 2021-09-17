@@ -11,17 +11,17 @@ const assertEqual = function(actual, expected) {
 
 //output return
 const eqArrays = (arrayOne , arrayTwo) => {
-  if(arrayOne.length !== arrayTwo.length) {
+  if (arrayOne.length !== arrayTwo.length) {
     return false;
-  } 
+  }
   //checking if array is matched or else return false
-  for(let i = 0; i < arrayOne.length; i++) {
-    if(arrayOne[i] !== arrayTwo[i]) {
-      return false ;
-    } 
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
+    }
   }
   return true;
-}
+};
 
 //comparing objects
 const eqObjects = (object1, object2) => {
@@ -32,7 +32,7 @@ const eqObjects = (object1, object2) => {
   }
   for (let key of object1Length) {
     //if array object is array checking with eq array
-    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) { 
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       let arrEquality = eqArrays(object1[key], object2[key]);
       if (!arrEquality) {
         return false;
