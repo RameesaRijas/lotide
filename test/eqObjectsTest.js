@@ -26,16 +26,11 @@ describe("#eqObjects", () => {
     assert.isFalse(_.eqObjects(cd, cd2));
   });
 
-
-
-
   it('should return false when passing { c: "1", d: ["2", 3] }, { d: ["2", 3], c: "1" }', () => {
     const cd = { c: "1", d: ["2", 3] };
     const dc = { d: ["2", 3], c: "1" };
     assert.isTrue(_.eqObjects(cd, dc));
   });
-
-
 
   it('should return true when passing { a: {z : 1}, b: 2 }, { a: { z: 1 }, b: 2 }', () => {
     assert.isTrue(_.eqObjects({ a: {z : 1}, b: 2 }, { a: { z: 1 }, b: 2 }));
