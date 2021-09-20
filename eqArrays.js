@@ -1,5 +1,8 @@
 //out put return
 const eqArrays = (arrayOne , arrayTwo) => {
+  if (!arrayOne.length && !arrayTwo.length) {
+    return false;
+  }
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }

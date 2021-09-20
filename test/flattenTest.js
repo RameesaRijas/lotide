@@ -1,0 +1,16 @@
+const assert = require("chai").assert;
+const _ = require("../index");
+
+describe("#tail", () => {
+  it("should return [1, 2, 3, 4, 5, 6] when passed [1, 2, [3, 4], 5, [6]]", () =>{
+      assert.deepEqual(_.flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+  });
+
+  it("should return [1, 2, 3] when passed [1, [2,3]]", () => {
+    assert.deepEqual(_.flatten([1, [2, 3]]), [1, 2, 3]);
+  });
+
+  it("should return [] when passing []", () => {
+    assert.deepEqual(_.flatten([]), []);
+  });
+});

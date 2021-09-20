@@ -1,4 +1,3 @@
-const assertArraysEqual  = require('./assertArrayEqual');
 //flatten array to single array
 const flatten = (arrayToFlatten) => {
   let resultArray = [];
@@ -14,5 +13,4 @@ const flatten = (arrayToFlatten) => {
   return resultArray;
 };
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1,2,3,4,5,6]);
 module.exports = flatten;

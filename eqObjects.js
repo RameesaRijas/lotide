@@ -1,28 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  let cross = String.fromCodePoint(10060);//cross emoji
-  let tick = String.fromCodePoint(9989);//tick emoji
-  if (actual === expected) {
-    console.log(`${tick}${tick} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${cross}${cross} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-//output return
-const eqArrays = (arrayOne , arrayTwo) => {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  //checking if array is matched or else return false
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
+const eqArrays = require("./eqArrays");
 //comparing objects
 const eqObjects = (object1, object2) => {
   let object1Keys = Object.keys(object1);
@@ -47,28 +23,5 @@ const eqObjects = (object1, object2) => {
   }
   return true;
 };
-
-
-
-
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
-
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc) , true); // => false
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), true); // => false
-
-assertEqual(eqObjects(cd, dc), true); // => true
-assertEqual(eqObjects({ a: {z : 1}, b: 2 }, { a: { z: 1 }, b: 2 }) , true); // => true
-
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), true); // => false
 
 module.exports = eqObjects;
