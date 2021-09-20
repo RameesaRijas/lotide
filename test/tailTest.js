@@ -1,6 +1,5 @@
-const tailFunctions = require('../tail');
-const assertEqual = tailFunctions.assertEqual;
-const tail = tailFunctions.tail;
+const tail = require('../tail');
+const assertEqual = require('../assertEqual');
 
 //Test Case 1 : 
 const result = tail(["Hello", "Lighthouse", "Hello"]);

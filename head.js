@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 //to find head of array
 const head = function(array) {
   //for preventing changes in original array
@@ -7,4 +6,4 @@ const head = function(array) {
   return firstElement;
 };
 
-module.exports = {head, assertEqual};
+module.exports = head;

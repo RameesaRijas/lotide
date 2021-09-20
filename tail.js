@@ -1,6 +1,3 @@
-//checking assertEqual function
-const assertEqual = require('./assertEqual');
-
 //tail function
 const tail = function(array) {
   let duplicateArray = [];
@@ -10,4 +7,4 @@ const tail = function(array) {
   return duplicateArray;
 };
 
-module.exports = {tail, assertEqual};
+module.exports = tail;
