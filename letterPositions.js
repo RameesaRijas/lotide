@@ -1,29 +1,4 @@
-//getting input arrays
-const eqArrays = (arrayOne , arrayTwo) => {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  //checking if array is matched or else return false
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-//output
-const assertArraysEqual = (arr1, arr2) => {
-  let cross = String.fromCodePoint(10060);//cross emoji
-  let tick = String.fromCodePoint(9989);//tick emoji
-  let result = eqArrays(arr1, arr2);
-  if (result) {
-    console.log(`${tick}${tick} Assertion Passed`);
-  } else {
-    console.log(`${cross}${cross} Assertion Failed`);
-  }
-};
-
+const assertArraysEqual = require('./assertArrayEqual'); 
 //finding letter position
 const letterPositions = function(sentence) {
   const result = {};
@@ -45,3 +20,5 @@ const letterPositions = function(sentence) {
 };
 
 assertArraysEqual(letterPositions("hello").l, [2, 3]);
+
+module.exports = letterPositions;

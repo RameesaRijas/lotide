@@ -1,14 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  let cross = String.fromCodePoint(10060);//cross emoji
-  let tick = String.fromCodePoint(9989);//tick emoji
-  if (actual === expected) {
-    console.log(`${tick}${tick} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${cross}${cross} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
+const assertEqual = require('./assertEqual');
 //finding key by value
 const findKey = (myObject, callback) => {
   let keyOfValue;
@@ -32,3 +22,5 @@ const objectStars = {
 };
 
 assertEqual(findKey(objectStars, x => x.stars === 2), "noma");// => "noma"
+
+module.exports = findKey;

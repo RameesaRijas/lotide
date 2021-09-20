@@ -1,15 +1,4 @@
-//output code
-const assertEqual = function(actual, expected) {
-  let cross = String.fromCodePoint(10060);//cross emoji
-  let tick = String.fromCodePoint(9989);//tick emoji
-  if (actual === expected) {
-    console.log(`${tick}${tick} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${cross}${cross} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-
+const assertEqual = require('./assertEqual');
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
 const countOnly = function(allItems, itemsToCount) {
@@ -46,3 +35,5 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+module.exports = countOnly;

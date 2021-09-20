@@ -1,14 +1,4 @@
-//output code
-const assertEqual = function(actual, expected) {
-  let cross = String.fromCodePoint(10060);//cross emoji
-  let tick = String.fromCodePoint(9989);//tick emoji
-  if (actual === expected) {
-    console.log(`${tick}${tick} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${cross}${cross} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
+const assertEqual = require('./assertEqual');
 //to count letters
 const countLetters = (stringToPass) => {
   const result = {};
@@ -43,3 +33,5 @@ assertEqual(extractValue["u"] , expected["u"]);
 assertEqual(extractValue["h"] , expected["h"]);
 assertEqual(extractValue["c"] , expected["u"]);
 assertEqual(extractValue["n"] , expected["n"]);
+
+module.exports = countLetters;
