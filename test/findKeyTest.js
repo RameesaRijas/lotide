@@ -1,5 +1,5 @@
 const assert = require("chai").assert;
-const _ = require("../index");
+const findKey = require("../findKey");
 
 
 //tets cases get 1st one with the condition
@@ -14,17 +14,17 @@ const objectStars = {
 
 describe("#findKey", () => {
   it("should return noma when passed 2", () =>{
-      assert.equal(_.findKey(objectStars, x => x.stars === 2), "noma");
+      assert.equal(findKey(objectStars, x => x.stars === 2), "noma");
   });
 
   it("should return akaleri when passed 3", () => {
-    assert.equal(_.findKey(objectStars, x => x.stars === 3), "Akaleri");
+    assert.equal(findKey(objectStars, x => x.stars === 3), "Akaleri");
   });
 
   it("should return Blue Hill when passing 1", () => {
-    assert.equal(_.findKey(objectStars, x => x.stars === 1), "Blue Hill");
+    assert.equal(findKey(objectStars, x => x.stars === 1), "Blue Hill");
   });
   it("should return undefined when passing 4", () => {
-    assert.equal(_.findKey(objectStars, x => x.stars === 4), undefined);
+    assert.equal(findKey(objectStars, x => x.stars === 4), undefined);
   });
 });
