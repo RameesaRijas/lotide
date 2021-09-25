@@ -1,6 +1,6 @@
 {
   "name": "@ramiza/lotide",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "#Lotide library : A mini clone of the Lodash library.",
   "main": "index.js",
   "directories": {

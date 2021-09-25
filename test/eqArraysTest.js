@@ -18,4 +18,16 @@ describe("#eqArray", () => {
     assert.isTrue(eqArrays(["lighthouse", "hello"], ["lighthouse", "hello"]));
   });
 
+  it("should return true when passing [[2, 3], [4]], [[2, 3], [4]]", () => {
+    assert.isTrue(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
+  });
+
+  it("should return false when passing [[2, 3], [4]], [[2, 3], [4, 5]]", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+  });
+
+  it("should return false when passing [[2, 3], [4]], [[2, 3], 4]", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], 4]));
+  });
+
 });
